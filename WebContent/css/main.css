@@ -1,0 +1,9 @@
+* {
+	margin:0px;
+}
+.form_title {
+  text-align: center;
+  font-size: 18px;
+  padding:10px;
+  font-weight: bold;
+}

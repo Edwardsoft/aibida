@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+    <constant name="struts.enable.DynamicMethodInvocation" value="false" />
+    <constant name="struts.devMode" value="false" />
+
+    <package name="default" namespace="/" extends="struts-default">
+
+        <action name="Index" class="aibida.web.controler.Index">
+          <result>index.jsp</result>
+        </action>
+        <action name="Donate_showAll" class="aibida.web.controler.Donate" method="showAll">
+          <result>donate.jsp</result>
+        </action>
+        <action name="Donate_show" class="aibida.web.controler.Donate" method="show">
+          <result>project.jsp</result>
+        </action>
+        <action name="Volunteer_showAll" class="aibida.web.controler.Volunteer" method="showAll">
+          <result >volunteer.jsp</result>
+        </action>
+        <action name="Volunteer_show" class="aibida.web.controler.Volunteer" method="show">
+          <result >showvolunteer.jsp</result>
+        </action>
+        
+        <action name="Login" class="aibida.web.controler.Login" method="">
+          <result>Login.jsp</result>
+        </action>
+        
+        <action name="Register" class="aibida.web.controler.Register" method="">
+          <result>register.jsp</result>
+        </action>
+        
+        <action name="DoRegister" class="aibida.web.controler.Register" method="doRegister">
+          
+        </action>
+        
+        <action name="Search" class="aibida.web.controler.Search" method="">
+          <result>search.jsp</result>
+        </action>
+        
+        <action name="SearchVolunteer" class="aibida.web.controler.Search" method="searchVolunteer">
+          <result>searchvolunteer.jsp</result>
+        </action>
+        
+        <action name="UserAction_*" class="aibida.web.controler.UserAction" method="{1}">
+          <result name="email_S">activedemail.jsp</result>
+          <result name="logout_S" type="redirectAction">Index</result>
+          <result name="show_E" type="redirectAction">user_error.jsp</result>
+          <result name="show_S">geren.jsp</result>
+        </action>
+        
+        <action name="Order_*" class="aibida.web.controler.OrderAction" method="{1}">
+          <result name="myorders_S">myorders.jsp</result>
+          <result name="view_S">ordercheck.jsp</result>
+        </action>
+        
+        <action name="OrderCar_*" class="aibida.web.controler.OrderCarAction" method="{1}">
+        </action>
+        
+    </package>
+
+
+    <!-- Add packages here -->
+
+</struts>
