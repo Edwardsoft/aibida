@@ -22,7 +22,9 @@
 	</div>
 	</div >
 </div>
-<div style="background-color: black;height: 150px;margin-bottom: -20px;"></div>
+<div style="background-color: black;height: 150px;margin-bottom: -20px;">
+  <a href="https://m.kuaidi100.com/" target="_blank">快递查询</a>
+</div>
 
 <script>
 	$(document).ready(function(){

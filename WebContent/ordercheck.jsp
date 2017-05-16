@@ -229,7 +229,7 @@
     		  var telephone=$("input[name='telephone']").val();
     		  var address=$("#address").val();
     		  alert(address);
-    		  location.href="OrderServlet?method=submitOrder&name="+name+"&telephone="+telephone+"&address="+address;
+    		  location.href="Order_submitOrder?name="+name+"&telephone="+telephone+"&address="+address;
     	  });
       });
     </script>

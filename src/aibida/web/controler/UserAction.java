@@ -195,4 +195,14 @@ public class UserAction extends ActionSupport{
 		return "show_S";
 	}
 	
+	public String setup() {
+		ActionContext actioncontext=ActionContext.getContext();
+		Map session=actioncontext.getSession();
+		if(session.get("user")==null) {
+			return "show_E";
+		}
+				
+		return "setup_S";
+	}
+	
  }

@@ -55,7 +55,7 @@
           <div class="col-sm-10">
             <div>
 		          <ol class="breadcrumb" style="background-color: transparent;margin: 0px;padding: 0px;">
-		            <li><a href="geren">个人中心</a></li>
+		            <li><a href="UserAction_show">个人中心</a></li>
 		            <li class="active">捐赠记录</li>
 		          </ol>
             </div>

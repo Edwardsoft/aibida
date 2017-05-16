@@ -51,11 +51,14 @@
           <result name="logout_S" type="redirectAction">Index</result>
           <result name="show_E" type="redirectAction">user_error.jsp</result>
           <result name="show_S">geren.jsp</result>
+          <result name="setup_S">gerensetup.jsp</result>
         </action>
         
         <action name="Order_*" class="aibida.web.controler.OrderAction" method="{1}">
           <result name="myorders_S">myorders.jsp</result>
           <result name="view_S">ordercheck.jsp</result>
+          <result name="NoLogin">user_error.jsp</result>
+          <result name="order_S">ordercomplete.jsp</result>
         </action>
         
         <action name="OrderCar_*" class="aibida.web.controler.OrderCarAction" method="{1}">

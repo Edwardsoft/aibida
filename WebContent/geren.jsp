@@ -57,7 +57,7 @@
 	          ${user.userName }
 	         </div>
 	         <div class="col-sm-6" style="  text-align: right;font-size:14px;">
-	           <a href="gerensetup">编辑个人信息</a>
+	           <a href="UserAction_setup">编辑个人信息</a>
 	         </div>
 	       </div>
 	       <div class="row" style="padding:10px;">
@@ -96,7 +96,7 @@
         <div class="col-sm-10" style="border-top:1px solid #e4e4e4;">
           <div class="row col-sm-12" style="border-bottom:1px solid #e4e4e4;padding:10px;">
             <div class="col-sm-6">我的捐赠记录</div>
-            <c:if test="${orders!=null }"><div class="col-sm-6" style="text-align: right;"><a href="OrderServlet?method=myOrders&user_id=${user.id}">更多>></a></div></c:if>
+            <c:if test="${orders!=null }"><div class="col-sm-6" style="text-align: right;"><a href="Order_getMyOrders">更多>></a></div></c:if>
           </div>
           <c:choose>
             <c:when test="${orders==null }">
