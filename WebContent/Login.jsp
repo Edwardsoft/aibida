@@ -41,8 +41,8 @@
       </div>
 			<div class="row col-sm-12" style="margin:10px 0px;">
 			   <div class="col-sm-4"></div>
-			   <div class="col-sm-2"><input type="radio" checked="checked" name="type">个人用户</div>
-			   <div class="col-sm-2"><input type="radio" name="type" id="orlogin">公益组织</div>
+			   <div class="col-sm-2"><a href="Login"><input type="radio" checked="checked" name="type"></a>个人用户</div>
+			   <div class="col-sm-2"><a href="orLogin"><input type="radio" name="type" id="orlogin"></a>公益组织</div>
 			   <div class="col-sm-4"></div>
 			</div> 
 			<div class="row col-sm-12">
@@ -136,7 +136,7 @@
 			}
 		});
 		$("#orlogin").click(function(){
-			location.href="OrLogin";
+			location.href="orLogin";
 		});		
 	});
 </script>

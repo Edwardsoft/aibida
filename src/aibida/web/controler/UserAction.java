@@ -205,4 +205,11 @@ public class UserAction extends ActionSupport{
 		return "setup_S";
 	}
 	
+	
+	public String orLogin() {
+		ActionContext actioncontext=ActionContext.getContext();
+		Map session=actioncontext.getSession();
+		
+		return "orLogin_S";
+	}
  }

@@ -30,6 +30,10 @@
           <result>Login.jsp</result>
         </action>
         
+        <action name="orLogin" class="aibida.web.controler.Login" method="orLogin">
+          <result name="orLogin_S">admin/orLogin.jsp</result>
+        </action>
+        
         <action name="Register" class="aibida.web.controler.Register" method="">
           <result>register.jsp</result>
         </action>
