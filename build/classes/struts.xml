@@ -31,7 +31,7 @@
         </action>
         
         <action name="orLogin" class="aibida.web.controler.Login" method="orLogin">
-          <result name="orLogin_S">admin/orLogin.jsp</result>
+          <result name="orLogin_S">orlogin.jsp</result>
         </action>
         
         <action name="Register" class="aibida.web.controler.Register" method="">
@@ -67,6 +67,13 @@
         
         <action name="OrderCar_*" class="aibida.web.controler.OrderCarAction" method="{1}">
         </action>
+        
+        <action name="OrganazationAction_*" class="aibida.web.controler.OrganazationAction" method="{1}">
+          <result name="Login_S">Index</result>
+          <result name="Login_F">orLogin</result>
+        </action>
+        
+        <action name="ExpressAction" class="aibida.web.controler.ExpressAction" method="search"></action>
         
     </package>
 

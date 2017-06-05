@@ -40,20 +40,32 @@ public class OrganazationImpl implements IOrganazation{
 
 	@Override
 	public Organazation getOrnazation(String username, String password) {
-		username=Md5.EncodingByMd5(username);
-		password=Md5.EncodingByMd5(password);
-		String sql="select * from organazation where username='"+username+"' and password='"+password+"';";
+		
+		String sql="select * from organazation where name='"+username+"' and password='"+password+"';";
 		Connection conn=JDBCUtil.getConnection();
 		Statement st=JDBCUtil.getStatement(conn);
 		ResultSet rs=JDBCUtil.getResultSet(sql, st);
 		try {
 			if(rs.next()) {
+				System.out.println("SUCCESS");
+				Organazation organazation=new Organazation();
+				organazation.setName(username);
+				organazation.setPassword(password);
+				organazation.setAvatar(rs.getString("avatar"));
+				organazation.setEmail(rs.getString("email"));
+				organazation.setId(rs.getInt("id"));
+				organazation.setInsert_time(rs.getTimestamp("insert_time"));
+				organazation.setIscheck(rs.getInt("ischeck"));
+				organazation.setSynopsis(rs.getString("synopsis"));
+				organazation.setTelephone(rs.getString("telephone"));
+				return organazation;
 				
 			}
 		}catch (SQLException e) {
 			// TODO: handle exception
 			e.printStackTrace();
 		}
+		System.out.println("FAILED");
 		return null;
 	}
 

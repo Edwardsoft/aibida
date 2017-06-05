@@ -1,6 +1,12 @@
 package aibida.web.controler;
 
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.Map;
+
+import javax.servlet.http.HttpServletResponse;
+
+import org.apache.struts2.ServletActionContext;
 
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
@@ -38,15 +44,23 @@ public class OrganazationAction extends ActionSupport{
 		this.email = email;
 	}
 
-	public String login() {
+	public void login() throws IOException{
+		System.out.println(username+" "+password);
+		System.out.println("fsfsfasd");
 		IOrganazation iOrganazation=new OrganazationImpl();
 		Organazation organazation;
+		HttpServletResponse response = ServletActionContext.getResponse();
+		
+	    PrintWriter writer = response.getWriter();
 		if((organazation=iOrganazation.getOrnazation(username, password))!=null) {
 			Map session=ActionContext.getContext().getSession();
-			session.put(organazation, organazation);
-			return "Login_S";
+			session.put("user", organazation);
+			writer.write("true");
+			return ;
 		}
-		return "Login_F";
+		System.out.println("失败");
+		writer.write("false");
+		writer.close();
 		
 		
 	}

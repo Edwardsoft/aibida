@@ -169,7 +169,7 @@
       <div class="col-sm-3"></div>
       <label for="InputUsername" class="contaol-label col-sm-2">用户名</label>
       <div class="col-sm-4">
-        <input type="text" class="form-control login_input" id="InputUsername" placeholder="请输入用户名/邮箱/手机号" name="username" id="username">
+        <input type="text" class="form-control login_input" id="InputUsername" placeholder="请输入用户名/邮箱/手机号" value="${username}"  name="username" id="username">
       </div>
       <div class="col-sm-3"><span id="username_error" style="color:red;"></span></div>
     </div>
@@ -265,21 +265,21 @@
         $("#username_error").html("");
         $("#password_error").html("");
         $.post(
-          "UserServlet",
+          "OrganazationAction_login",
           {username:username.trim(),password:password.trim(),method:'login'},
           function(data) {
             if(data=="false") {
               $("#username_error").html("登录失败，您输入的用户名或密码错误");
             }else {
               $("#username_error").html(data+"，登录成功，3秒后跳转至之前的页面");
-              location.href="index.jsp";
+              location.href="Index";
             }
           }
         );
       }
     });
     $("#gelogin").click(function() {
-        location.href="login"
+        location.href="Login"
      });
     
     

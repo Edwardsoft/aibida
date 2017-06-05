@@ -104,7 +104,8 @@ public class UserAction extends ActionSupport{
 
 	public void login() throws IOException {        //登录
 		IUser iuser=new UserImpl();                        
-		user=iuser.findUser(username, password);         
+		user=iuser.findUser(username, password);       
+		System.out.println("   sdfsdfsd测试");
 		HttpServletResponse response = ServletActionContext.getResponse();
 	    PrintWriter writer = response.getWriter();
 		if(user==null) {
